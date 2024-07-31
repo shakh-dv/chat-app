@@ -1,0 +1,28 @@
+*.log
+nuxt.d.ts
+# private config
+.env
+
+# deps
+node_modules
+dist
+
+# build or generate
+.nuxt
+.output
+
+# aditional configuration
+back/uploads
+backups/uploads
+backups/dump
+backups/backup.zip
+back/lib
+postgres-data/
+
+# IDE
+.idea
+.vercel
+.DS_Store
+
+volumes/
+__pycache__/
