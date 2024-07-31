@@ -5,6 +5,8 @@ import {ClsModule} from 'nestjs-cls';
 import {LoggerModule} from './core/infra/logger/logger.module';
 import {v4 as uuid} from 'uuid';
 import {ConfigModule} from '@nestjs/config';
+import { ChatModule } from './chat/chat.module';
+import { PrismaModule } from './core/infra/prisma/prisma.module';
 
 @Module({
   imports: [
@@ -20,6 +22,8 @@ import {ConfigModule} from '@nestjs/config';
       global: true,
     }),
     LoggerModule,
+    ChatModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
