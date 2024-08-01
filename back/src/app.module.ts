@@ -8,6 +8,7 @@ import {ConfigModule} from '@nestjs/config';
 import {ChatModule} from './chat/chat.module';
 import {PrismaModule} from './core/infra/prisma/prisma.module';
 import {UsersModule} from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import {UsersModule} from './users/users.module';
     ChatModule,
     PrismaModule,
     UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
