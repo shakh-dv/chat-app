@@ -1,7 +1,8 @@
 import {ConflictException, Injectable} from '@nestjs/common';
-import {CreateUserDTO, CreateUserDTOResult} from './dto/create-user.dto';
 import {PrismaService} from '../core/infra/prisma/prisma.service';
 import {User} from '@prisma/client';
+import {GetAllUsersDTOResult} from './dtos/get-all-users.dto';
+import {CreateUserDTO, CreateUserDTOResult} from './dtos/create-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -23,9 +24,9 @@ export class UsersService {
       },
       select: {
         id: true,
+        email: true,
         createAt: true,
         updatedAt: true,
-        email: true,
       },
     });
   }
@@ -34,6 +35,17 @@ export class UsersService {
     return this.prismaService.user.findFirst({
       where: {
         email,
+      },
+    });
+  }
+
+  getAll(): Promise<GetAllUsersDTOResult> {
+    return this.prismaService.user.findMany({
+      select: {
+        id: true,
+        email: true,
+        createAt: true,
+        updatedAt: true,
       },
     });
   }

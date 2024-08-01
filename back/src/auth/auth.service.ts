@@ -64,18 +64,9 @@ export class AuthService {
       throw new UnauthorizedException('User already exists');
     }
 
-    const newUser = await this.usersService.create({
+    return this.usersService.create({
       email: email,
       password: await this.generateHashPassword(password),
     });
-
-    const accessToken = await this.generateAccessToken({
-      email: newUser.email,
-      userId: newUser.id,
-    });
-
-    return {
-      accessToken,
-    };
   }
 }
