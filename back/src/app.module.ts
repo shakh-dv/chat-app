@@ -7,6 +7,7 @@ import {v4 as uuid} from 'uuid';
 import {ConfigModule} from '@nestjs/config';
 import { ChatModule } from './chat/chat.module';
 import { PrismaModule } from './core/infra/prisma/prisma.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { PrismaModule } from './core/infra/prisma/prisma.module';
     LoggerModule,
     ChatModule,
     PrismaModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
