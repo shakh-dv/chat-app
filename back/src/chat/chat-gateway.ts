@@ -11,14 +11,10 @@ import {IncomingMessage} from 'http';
 
 import {Server, WebSocket} from 'ws';
 
-
 @WebSocketGateway(4040)
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
-
-
   @WebSocketServer()
   server!: Server;
-
 
   async handleConnection(
     webSocket: WebSocket,
@@ -27,9 +23,7 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
     console.log('привет');
   }
 
-  handleDisconnect(websocket: WebSocket): void {
-
-  }
+  handleDisconnect(websocket: WebSocket): void {}
 
   @WebSocketServer()
   @SubscribeMessage('newMessage')
