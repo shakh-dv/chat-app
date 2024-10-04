@@ -1,6 +1,6 @@
 import {Request as ExpressRequest} from 'express';
-import {AccessTokenPayload} from './access-token-payload';
+import {TokenPayload} from './access-token-payload';
 
 export type Request = ExpressRequest & {
-  accessTokenPayload?: AccessTokenPayload;
+  accessTokenPayload?: TokenPayload;
 };

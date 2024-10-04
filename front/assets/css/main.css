@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.mini-img-box {
+    @apply w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-28 lg:h-28 xl:w-36 xl:h-36 flex justify-center items-center bg-primary-600 hover:border-2 hover:border-primary-300 cursor-pointer transition ease-in-out
+}
+
+.mega-img-box {
+    @apply aspect-square h-auto flex justify-center items-center bg-primary-600 border-2 hover:border-primary-300 cursor-pointer transition-all
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    @apply max-w-[1440px]
+}
+
+/*TODO: make this nice*/
+.content table {
+    @apply w-full border-collapse table-auto my-6
+}
+
+.content table thead tr th {
+    @apply text-left px-4 py-2 border border-gray-400
+}
+
+.content td {
+    @apply w-1/2 p-2
+}
+
+.content th {
+    @apply text-left p-2
+}
+
+.content h4 {
+    @apply text-xl font-semibold mt-2 mb-4
+}
+
+.textColor p, span, h1, h2, h3, h4, h5, h6 {
+    @apply text-primary-400
+}
+
+.content tr:nth-child(1) {
+    width: 70%;
+}
+
+.textEllipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

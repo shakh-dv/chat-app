@@ -5,7 +5,6 @@ import {ClsModule} from 'nestjs-cls';
 import {LoggerModule} from './core/infra/logger/logger.module';
 import {v4 as uuid} from 'uuid';
 import {ConfigModule} from '@nestjs/config';
-import {ChatModule} from './chat/chat.module';
 import {PrismaModule} from './core/infra/prisma/prisma.module';
 import {UsersModule} from './users/users.module';
 import { AuthModule } from './auth/auth.module';
@@ -24,7 +23,6 @@ import { AuthModule } from './auth/auth.module';
       global: true,
     }),
     LoggerModule,
-    ChatModule,
     PrismaModule,
     UsersModule,
     AuthModule,

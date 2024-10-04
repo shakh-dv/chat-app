@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b14eca0b-5a72-459c-9ded-54978e76de7c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/front/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/app.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/NavBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/input-id.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/mark.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/platform.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/scrollspy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/tailwind.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useAsync.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useGateWay.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useGateWayUrl.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useModal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useToast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/useValidate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/composables/window-scroll.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/constants/examples.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/constants/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/constants/modelNames.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/layouts/default.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/nuxt.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/sign-in.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/bridal-bouquet_81048-36354.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/server/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/types/generics.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/bus.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/gtag.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/parseTime.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/search.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/utils/text.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/auth/dtos/sign-in.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/dtos/sign-in.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/auth/types/access-token-payload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/auth/types/access-token-payload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/chat/chat-gateway.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/chat/chat.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/core/infra/logger/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/core/infra/logger/logger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/users/users.controller.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2k0SNLXa5wOmYgM8cq83dFnCTJW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Portfolio/chat-app/front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Programming\\Portfolio\\chat-app\\back\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Portfolio\chat-app\front" />
+      <recent name="D:\Programming\Portfolio\chat-app\front\types" />
+      <recent name="D:\Programming\Portfolio\chat-app\front\composables" />
+      <recent name="D:\Programming\Portfolio\chat-app\front\components" />
+      <recent name="D:\Programming\Portfolio\chat-app\back\src\auth" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b14eca0b-5a72-459c-9ded-54978e76de7c" name="Changes" comment="" />
+      <created>1722418959313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722418959313</updated>
+      <workItem from="1722418960403" duration="6284000" />
+      <workItem from="1722497918933" duration="6793000" />
+      <workItem from="1724141844862" duration="2172000" />
+      <workItem from="1725367461540" duration="1122000" />
+      <workItem from="1725533996895" duration="18000" />
+      <workItem from="1727514813821" duration="2959000" />
+      <workItem from="1727517866124" duration="3494000" />
+      <workItem from="1727521441289" duration="3230000" />
+      <workItem from="1727525312262" duration="1193000" />
+      <workItem from="1727527979083" duration="1568000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

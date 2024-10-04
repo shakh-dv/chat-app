@@ -2,7 +2,7 @@ import * as bcrypt from 'bcrypt';
 import {Injectable, UnauthorizedException} from '@nestjs/common';
 
 import {JwtService} from '@nestjs/jwt';
-import {AccessTokenPayload} from './types/access-token-payload';
+import {TokenPayload} from './types/access-token-payload';
 import {SignInDTO, SignInResultDTO} from './dtos/sign-in.dto';
 import {UsersService} from '../users/users.service';
 import {BCRYPT_HASH_SALT} from './constants/constants';
@@ -15,18 +15,17 @@ export class AuthService {
     private readonly jwtService: JwtService
   ) {}
 
-  async generateAccessToken(payload: AccessTokenPayload): Promise<string> {
-    return this.jwtService.signAsync(payload);
+  async generateAccessToken(
+    subject: string | number,
+    payload: TokenPayload
+  ): Promise<string> {
+    return await this.jwtService.signAsync(payload, {
+      subject: String(subject),
+    });
   }
 
   async generateHashPassword(password: string): Promise<string> {
     return await bcrypt.hash(password, BCRYPT_HASH_SALT);
-  }
-
-  async verifyAcessToken(accessToken: string): Promise<AccessTokenPayload> {
-    const payload: AccessTokenPayload =
-      await this.jwtService.verifyAsync(accessToken);
-    return payload;
   }
 
   async signIn(data: SignInDTO): Promise<SignInResultDTO> {
@@ -44,13 +43,10 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    const accessToken = await this.generateAccessToken({
-      email: user.email,
-      userId: user.id,
-    });
-
     return {
-      accessToken,
+      access_token: await this.generateAccessToken(user.id, {
+        email: user.email,
+      }),
     };
   }
 

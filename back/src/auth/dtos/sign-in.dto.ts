@@ -14,5 +14,5 @@ export class SignInDTO {
 }
 
 export interface SignInResultDTO {
-  accessToken: string;
+  access_token: string;
 }

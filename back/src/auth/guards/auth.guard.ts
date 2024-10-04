@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import {JwtService} from '@nestjs/jwt';
 import {Request} from '../types/requests';
-import {AccessTokenPayload} from '../types/access-token-payload';
+import {TokenPayload} from '../types/access-token-payload';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException();
     }
 
-    const payload: AccessTokenPayload = await this.jwtService
+    const payload: TokenPayload = await this.jwtService
       .verifyAsync(token)
       .catch(() => {
         throw new UnauthorizedException();
