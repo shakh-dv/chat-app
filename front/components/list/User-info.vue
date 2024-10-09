@@ -7,7 +7,7 @@ import {Icon} from '@iconify/vue';
     <div class="flex p-5 items-center justify-between">
         <div class="flex items-center gap-5">
             <img
-                src="../public/avatar.png"
+                src="../../public/avatar.png"
                 class="w-12 h-12 rounded-full object-cover"
                 alt=""
             >

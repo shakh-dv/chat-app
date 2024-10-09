@@ -1,9 +1,9 @@
 import colors from 'tailwindcss/colors';
 
 export default defineNuxtConfig({
-    ssr:  true,
+    ssr: false,
     compatibilityDate: '2024-04-03',
-    devtools: { enabled: false },
+    devtools: {enabled: false},
     postcss: {
         plugins: {
             tailwindcss: {},
@@ -15,20 +15,22 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@nuxtjs/color-mode',
         '@nuxtjs/tailwindcss',
-        'nuxt-icon',
         '@nuxtjs/i18n',
         '@nuxt/image',
     ],
     runtimeConfig: {
         public: {
-            apiUrl:'http://localhost:4000', // Обратите внимание на "public"
+            apiUrl: 'http://localhost:4000', // Обратите внимание на "public"
         },
     },
+    plugins: [
+        '~/plugins/iconify.ts',
+    ],
     tailwindcss: {
         exposeConfig: true,
         config: {
             theme: {
-                container: { center: true },
+                container: {center: true},
                 colors: {
                     ...colors,
                     primary: {

@@ -24,40 +24,16 @@
                 @click="toggleIcon"
             />
         </div>
-        <div class="flex items-center gap-5 p-5 cursor-pointer hover:bg-gray-200">
+        <div
+            v-for="chat in chats"
+             class="flex items-center gap-5 p-5 cursor-pointer hover:bg-gray-200">
             <img
-                src="../public/avatar.png"
+                src="../../public/avatar.png"
                 alt=""
                 class="w-12 h-12 rounded-full object-cover"
             >
             <div class="flex flex-col gap-1.5">
-                <span class="font-medium text-black">Jane Done</span>
-                <p class="font-light text-black">
-                    Hello
-                </p>
-            </div>
-        </div>
-        <div class="flex items-center gap-5 p-5 cursor-pointer hover:bg-gray-200">
-            <img
-                src="../public/avatar.png"
-                alt=""
-                class="w-12 h-12 rounded-full object-cover"
-            >
-            <div class="flex flex-col gap-1.5">
-                <span class="font-medium text-black">Jane Done</span>
-                <p class="font-light text-black">
-                    Hello
-                </p>
-            </div>
-        </div>
-        <div class="flex items-center gap-5 p-5 cursor-pointer hover:bg-gray-200">
-            <img
-                src="../public/avatar.png"
-                alt=""
-                class="w-12 h-12 rounded-full object-cover"
-            >
-            <div class="flex flex-col gap-1.5">
-                <span class="font-medium text-black">Jane Done</span>
+                <span class="font-medium text-black">{{chat.user2.id}}</span>
                 <p class="font-light text-black">
                     Hello
                 </p>
@@ -69,10 +45,24 @@
 <script setup lang="ts">
 
 const isPlus = ref(true);
-
+const chats = ref([]);
+const chatsService = useService('chats', {auth: true});
 const toggleIcon = () => {
     isPlus.value = !isPlus.value;
 };
+
+const loadChats = async () => {
+    try {
+        chats.value = await chatsService.find().exec(); // Предполагаем, что есть метод findAll в chatsService
+      console.log(chats.value)
+    } catch (error) {
+        console.error('Error loading chats:', error);
+    }
+};
+
+onMounted(() => {
+    loadChats();
+});
 
 </script>
 

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  $END$
+    <div class="container">Details</div>
 </template>
 
 <style scoped>
