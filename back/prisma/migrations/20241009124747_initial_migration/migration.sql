@@ -41,7 +41,7 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 CREATE UNIQUE INDEX "Chat_lastMessageId_key" ON "Chat"("lastMessageId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Message_chatId_key" ON "Message"("chatId");
+CREATE UNIQUE INDEX "Chat_user1Id_user2Id_key" ON "Chat"("user1Id", "user2Id");
 
 -- AddForeignKey
 ALTER TABLE "Chat" ADD CONSTRAINT "Chat_user1Id_fkey" FOREIGN KEY ("user1Id") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

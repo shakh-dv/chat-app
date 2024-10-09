@@ -1,4 +1,4 @@
-import {Injectable} from '@nestjs/common';
+import {BadRequestException, Injectable} from '@nestjs/common';
 import {CreateChatDTO} from './dtos/create-chat.dto';
 import {TokenPayload} from '../auth/types/access-token-payload';
 import {PrismaService} from '../core/infra/prisma/prisma.service';
@@ -8,8 +8,13 @@ export class ChatService {
   constructor(private prisma: PrismaService) {}
 
   async create(data: CreateChatDTO, accessTokenPayload: TokenPayload) {
+    const user1Id = Number(accessTokenPayload.sub);
+    const user2Id = data.user2Id;
+
     // Проверка, существует ли уже чат между этими пользователями
     const existingChat = await this.findChat(data, accessTokenPayload);
+
+    this.validateChatWithSelf(user1Id, user2Id);
 
     if (existingChat) {
       return existingChat;
@@ -17,10 +22,16 @@ export class ChatService {
 
     return this.prisma.chat.create({
       data: {
-        user1Id: Number(accessTokenPayload.sub),
-        user2Id: data.user2Id,
+        user1Id,
+        user2Id,
       },
     });
+  }
+
+  private validateChatWithSelf(user1Id: number, user2Id: number): void {
+    if (user1Id === user2Id) {
+      throw new BadRequestException('Нельзя создать чат с самим собой.');
+    }
   }
 
   async findChat(data: CreateChatDTO, accessTokenPayload: TokenPayload) {

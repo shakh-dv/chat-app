@@ -31,6 +31,8 @@ model Chat {
   messages      Message[] @relation("ChatMessages") // Сообщения, относящиеся к чату
   lastMessages  Message[] @relation("ChatLastMessage")
   lastMessageId Int?      @unique // Поле должно быть уникальным
+
+  @@unique([user1Id, user2Id])
 }
 
 model Message {
@@ -38,7 +40,7 @@ model Message {
   content      String // Содержимое сообщения
   sentAt       DateTime @default(now()) // Время отправки
   chat         Chat     @relation("ChatMessages", fields: [chatId], references: [id])
-  chatId       Int      @unique // Чат, к которому относится сообщение
+  chatId       Int // Чат, к которому относится сообщение
   sender       User     @relation(fields: [senderId], references: [id])
   senderId     Int // Отправитель сообщения
   isLastInChat Chat?    @relation("ChatLastMessage", fields: [chatId], references: [id], map: "MessageLastChat_fkey") // Обратное отношение для lastMessage
