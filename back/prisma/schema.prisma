@@ -1,22 +1,45 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique @db.VarChar(255)
-  password  String
-  createAt  DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         Int       @id @default(autoincrement())
+  email      String    @unique
+  password   String
+  name       String?
+  avatarUrl  String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  messages   Message[] // Сообщения, которые отправил пользователь
+  user1Chats Chat[]    @relation("User1Chats") // Чаты, где пользователь - первый участник
+  user2Chats Chat[]    @relation("User2Chats") // Чаты, где пользователь - второй участник
+}
+
+model Chat {
+  id            Int       @id @default(autoincrement())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  user1         User      @relation("User1Chats", fields: [user1Id], references: [id])
+  user1Id       Int // Идентификатор первого участника
+  user2         User      @relation("User2Chats", fields: [user2Id], references: [id])
+  user2Id       Int // Идентификатор второго участника
+  messages      Message[] @relation("ChatMessages") // Сообщения, относящиеся к чату
+  lastMessages  Message[] @relation("ChatLastMessage")
+  lastMessageId Int?      @unique // Поле должно быть уникальным
+}
+
+model Message {
+  id           Int      @id @default(autoincrement())
+  content      String // Содержимое сообщения
+  sentAt       DateTime @default(now()) // Время отправки
+  chat         Chat     @relation("ChatMessages", fields: [chatId], references: [id])
+  chatId       Int      @unique // Чат, к которому относится сообщение
+  sender       User     @relation(fields: [senderId], references: [id])
+  senderId     Int // Отправитель сообщения
+  isLastInChat Chat?    @relation("ChatLastMessage", fields: [chatId], references: [id], map: "MessageLastChat_fkey") // Обратное отношение для lastMessage
 }

@@ -25,7 +25,9 @@ export class UsersService {
       select: {
         id: true,
         email: true,
-        createAt: true,
+        avatarUrl: true,
+        name: true,
+        createdAt: true,
         updatedAt: true,
       },
     });
@@ -44,7 +46,9 @@ export class UsersService {
       select: {
         id: true,
         email: true,
-        createAt: true,
+        avatarUrl: true,
+        name: true,
+        createdAt: true,
         updatedAt: true,
       },
     });
